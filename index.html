@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UHQ Reader - Téléchargement Gratuit</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        .header {
+            background: linear-gradient(to bottom, #ffffff 0%, #e8e8e8 100%);
+            border-bottom: 2px solid #999;
+            padding: 20px 0;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, #4a90e2 0%, #2563eb 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .header-text h1 {
+            font-size: 32px;
+            color: #2563eb;
+            margin-bottom: 5px;
+        }
+
+        .header-text p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .main-section {
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .download-box {
+            background: linear-gradient(to bottom, #f9f9f9 0%, #efefef 100%);
+            border: 2px solid #4a90e2;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .download-box h2 {
+            color: #2563eb;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .version-info {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .download-button {
+            display: inline-block;
+            background: linear-gradient(to bottom, #5ba3ff 0%, #2563eb 100%);
+            color: white;
+            padding: 15px 50px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
+            border: 1px solid #1e40af;
+            box-shadow: 0 3px 8px rgba(37, 99, 235, 0.3);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .download-button:hover {
+            background: linear-gradient(to bottom, #6bb0ff 0%, #3b82f6 100%);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .download-button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 6px rgba(37, 99, 235, 0.3);
+        }
+
+        .file-info {
+            display: inline-block;
+            margin-top: 15px;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .feature-item {
+            padding: 20px;
+            background: #f9fafb;
+            border-left: 4px solid #2563eb;
+            border-radius: 4px;
+        }
+
+        .feature-item h3 {
+            color: #2563eb;
+            font-size: 16px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feature-item p {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .icon {
+            font-size: 20px;
+        }
+
+        .info-section {
+            background: #fff9e6;
+            border: 1px solid #ffc107;
+            border-radius: 4px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .info-section h3 {
+            color: #f59e0b;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-section ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .info-section li {
+            margin-bottom: 8px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+
+        .system-requirements {
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .system-requirements h3 {
+            color: #2563eb;
+            margin-bottom: 15px;
+        }
+
+        .system-requirements ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .system-requirements li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .system-requirements li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #22c55e;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="logo">UHQ</div>
+            <div class="header-text">
+                <h1>UHQ Reader</h1>
+                <p>Lecteur gratuit pour fichiers images Ultra Haute Qualité</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="main-section">
+            <div class="download-box">
+                <h2>📥 Télécharger UHQ Reader</h2>
+                <p class="version-info">Version 1.0 • Gratuit • Windows</p>
+                <a href="uhq-reader.exe" class="download-button" download>
+                    TÉLÉCHARGER GRATUITEMENT
+                </a>
+                <div class="file-info">
+                    📦 Fichier: uhq-reader.exe • Téléchargement direct
+                </div>
+            </div>
+
+            <h2 style="color: #2563eb; margin-bottom: 20px;">À propos du format .UHQ</h2>
+            <p style="line-height: 1.8; margin-bottom: 20px;">
+                Le format <strong>.UHQ (Ultra High Quality)</strong> est un format d'image spécialisé conçu pour préserver 
+                la qualité maximale de vos photos et images. Pour visualiser ces fichiers, vous avez besoin du 
+                <strong>UHQ Reader</strong>, un logiciel gratuit et léger.
+            </p>
+
+            <div class="features">
+                <div class="feature-item">
+                    <h3><span class="icon">🚀</span> Rapide et léger</h3>
+                    <p>Installation en quelques secondes, faible utilisation des ressources système</p>
+                </div>
+                <div class="feature-item">
+                    <h3><span class="icon">🖼️</span> Haute qualité</h3>
+                    <p>Visualisez vos images .UHQ sans perte de qualité</p>
+                </div>
+                <div class="feature-item">
+                    <h3><span class="icon">🔓</span> 100% Gratuit</h3>
+                    <p>Aucune limitation, aucun frais caché, totalement gratuit</p>
+                </div>
+                <div class="feature-item">
+                    <h3><span class="icon">⚡</span> Simple d'utilisation</h3>
+                    <p>Interface intuitive, ouvrez vos fichiers en un clic</p>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h3>💡 Comment utiliser UHQ Reader ?</h3>
+                <ul>
+                    <li>Téléchargez et installez UHQ Reader sur votre ordinateur</li>
+                    <li>Double-cliquez sur n'importe quel fichier .UHQ pour l'ouvrir</li>
+                    <li>Le fichier s'ouvrira automatiquement dans UHQ Reader</li>
+                    <li>Profitez de vos images en ultra haute qualité !</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="system-requirements">
+            <h3>Configuration système requise</h3>
+            <ul>
+                <li>Windows 7, 8, 10 ou 11</li>
+                <li>Processeur: 1 GHz ou supérieur</li>
+                <li>Mémoire RAM: 512 MB minimum</li>
+                <li>Espace disque: 10 MB disponibles</li>
+                <li>Carte graphique compatible avec DirectX 9 ou supérieur</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2026 UHQ Reader • Logiciel gratuit • Tous droits réservés</p>
+        <p style="margin-top: 10px; font-size: 12px; opacity: 0.8;">
+            Compatible avec Windows • Téléchargement sécurisé
+        </p>
+    </div>
+</body>
+</html>
